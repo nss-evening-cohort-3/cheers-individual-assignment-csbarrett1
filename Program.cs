@@ -11,14 +11,24 @@ namespace Cheers
         {
             // Variables section
             String prompt = "> ";
+            String requires_an = "halfnorsemix";
             String cheer_prefix = "Give me a";
-
 
             Console.WriteLine("What's your name?");
 
             Console.Write(prompt);
-            String user_name = Console.ReadLine(); //Read from terminal save to a variable
+            String user_name = Console.ReadLine().ToLower(); //Read from terminal save to a variable
             
+            // for (int i = 0; i < user_name.Length; i++) {
+            // String cheer_prefix = "Give me a"; // Resets the cheer_prefixvariable every iteration through for loop
+            //     if (requires_an.IndexOf(user_name[i]) > -1 ) {
+            //         cheer_prefix += "n";
+            //     }
+            //     Console.WriteLine(cheer_prefix + ".. " + user_name[i]);
+            // }
+    
+
+            // Last Refactoring using Contains instead of 'IndexOf'
             for (int i = 0; i < user_name.Length; i++) {
                 Console.WriteLine(cheer_prefix + ".. " + user_name[i]);
             }
